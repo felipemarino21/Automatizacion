@@ -1,40 +1,47 @@
-Feature: ECommerce Functions
+Feature: ECommerce cart functions
 
+This scenarios are for testing the different functions related to add to cart in the homepage
 
-
-  Scenario: Search on homepage
+  @Cart
+  Scenario: Hover with mouse shows add to cart button
     Given User is on the homepage
-    When User types in the searchbar the word "apple"
-    And Clicks the search button
-    Then User sees all the results containing "Apple" in the name
+    When User hovers the mouse over the first item
+    Then User sees add to cart button
 
-  Scenario: Hover on categories shows elements in the homepage
+  @Cart
+  Scenario: Add to cart confirmation
     Given User is on the homepage
-    When User hovers with the mouse over the MP3 players category
-    Then User sees all the elements in that category
+    When User adds the first item to the cart
+    Then User sees a Product successfully added to your shopping cart message
 
-  Scenario: Element added to cart is present in the cart
+  @Cart
+  Scenario: Add to cart confirmation
     Given User is on the homepage
-    When User adds a Macbook to cart
-    And User clicks on the cart
-    Then User sees the Macbook in the cart
+    When User adds the first item to the cart
+    And User clicks proceed to checkout
+    Then User is taken to the cart page
+  @Cart
+  Scenario: Add to cart confirmation
+    Given User is on the homepage
+    When User adds the first item to the cart
+    Then User sees the same price for the item in the cart
+  @Cart
+  Scenario: Hover with mouse on the cart shows cart's items
+    Given User is on the homepage
+    And User adds the first item to the cart
+    And User clicks continue shopping
+    When User hovers with the mouse over the Cart Button
+    Then User sees items in cart
+  @popo
+  Scenario: Remove item from the cart
+    Given User is on the homepage
+    And User adds the first item to the cart
+    And User clicks continue shopping
+    When User hovers with the mouse over the Cart Button
+    And User clicks remove item from the cart
+    Then User sees no items in the cart
 
-  Scenario: Add to cart notification shows after adding element to cart
-    Given User is on the homepage
-    When User adds a Macbook to cart
-    Then User sees the add to cart notification
 
-  Scenario: Item is added multiple times to cart
-    Given User is on the homepage
-    When User adds "3" Macbook to cart
-    And User clicks on the cart
-    And User clicks on view cart
-    Then User sees "3" MacBook  in the cart
-
-  Scenario: Change in currency
-    Given User is on the homepage
-    When User changes currency from dollars to euros
-    Then User sees all the prices in euros
 
 
 
