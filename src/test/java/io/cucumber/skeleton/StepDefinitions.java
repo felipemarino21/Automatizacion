@@ -25,14 +25,12 @@ public class StepDefinitions {
     public WebDriver driver;
     public WebDriverWait wait;
     public Actions a;
-    public LoginPage loginPage;
-    public RegistrationPage registrationPage;
 
     public HomePage homePage;
     public GenericUtils genericUtils;
-    public SearchPage searchPage;
+
     public CartPage cartPage;
-    public AccountPage accountPage;
+
 
     @Before
     public void setup() throws IOException {
@@ -52,13 +50,10 @@ public class StepDefinitions {
         wait = new WebDriverWait(driver, Duration.of(5, SECONDS));
         driver.manage().window().maximize();
         //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        loginPage = new LoginPage(driver);
-        registrationPage = new RegistrationPage(driver);
-        homePage = new HomePage(driver);
-        searchPage = new SearchPage(driver);
-        cartPage = new CartPage(driver);
-        accountPage = new AccountPage(driver);
         genericUtils = new GenericUtils(driver);
+        homePage = new HomePage(driver);
+        cartPage = new CartPage(driver);
+
     }
 
     @After
@@ -132,5 +127,6 @@ public class StepDefinitions {
 
     @Then("User sees no items in the cart")
     public void userSeesNoItemsInTheCart() {
+        homePage.checkEmptyCart(wait);
     }
 }
