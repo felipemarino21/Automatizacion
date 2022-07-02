@@ -28,6 +28,7 @@ public class HomePage {
 
     By cartItems = By.xpath("//div[@class='cart-info']");
     By removeItemCart = By.xpath("//a[@class='ajax_cart_block_remove_link']");
+    By emptyCartTag = By.xpath("//span[@class='ajax_cart_no_product']");
 
     public void clickAddToCartFirstElement(){
         driver.findElement(addToCartButton).click();
@@ -77,5 +78,10 @@ public class HomePage {
     public void clickRemoveItem(WebDriverWait wait) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(removeItemCart));
         driver.findElement(removeItemCart).click();
+    }
+
+    public void checkEmptyCart(WebDriverWait wait) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(emptyCartTag));
+        Assert.assertTrue(driver.findElement(emptyCartTag).isDisplayed());
     }
 }

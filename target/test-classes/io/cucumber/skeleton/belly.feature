@@ -25,13 +25,21 @@ This scenarios are for testing the different functions related to add to cart in
     Given User is on the homepage
     When User adds the first item to the cart
     Then User sees the same price for the item in the cart
-  @popo
+  @Cart
   Scenario: Hover with mouse on the cart shows cart's items
     Given User is on the homepage
     And User adds the first item to the cart
     And User clicks continue shopping
     When User hovers with the mouse over the Cart Button
     Then User sees items in cart
+  @Cart
+  Scenario: Remove item from the cart
+    Given User is on the homepage
+    And User adds the first item to the cart
+    And User clicks continue shopping
+    When User hovers with the mouse over the Cart Button
+    And User clicks remove item from the cart
+    Then User sees no items in the cart
 
 
 

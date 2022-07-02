@@ -17,14 +17,8 @@ public class CartPage {
         this.driver = driver;
     }
 
-    By itemQuantity = By.xpath("(//input[@class='form-control'])[1]");
 
-    public void compareQuantity(WebDriverWait wait,String number){
-        int n = Integer.parseInt(number);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(itemQuantity));
-        int value = Integer.parseInt(driver.findElement(itemQuantity).getAttribute("value"));
-        Assert.assertEquals(value,n);
-    }
+
 
 
 

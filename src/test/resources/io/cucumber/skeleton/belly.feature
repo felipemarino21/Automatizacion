@@ -32,7 +32,7 @@ This scenarios are for testing the different functions related to add to cart in
     And User clicks continue shopping
     When User hovers with the mouse over the Cart Button
     Then User sees items in cart
-  @popo
+  @Cart
   Scenario: Remove item from the cart
     Given User is on the homepage
     And User adds the first item to the cart
