@@ -4,19 +4,21 @@ To change the browser for testing please  open the global.properties file in the
 //AutomatizacionExcelCredit/src/test/resources/global.properties
 and replace edge for chrome
 
+THE TEST WAS RUN WITH CHROME 103.0.5060.66 AND MICROSOFT EDGE  103.0.1264.44
 
-To run this test, you must have Maven installed
+
+#To run this test, you must have Maven installed
 
 https://maven.apache.org/install.html
 
 
 Using Maven
 
-Open a command window in the project root folder and run:
+#Open a command window in the project root folder and run:
 
 maven clean test 
 
-Or use this command for generating a report in Html
+#Or use this command for generating a report in Html
 
 mvn surefire-report:report
 
