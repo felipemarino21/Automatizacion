@@ -14,11 +14,11 @@ https://maven.apache.org/install.html
 
 Using Maven
 
-#Open a command window in the project root folder and run:
+Open a command window in the project root folder and run:
 
 maven clean test 
 
-#Or use this command for generating a report in Html
+Or use this command for generating a report in Html
 
 mvn surefire-report:report
 
