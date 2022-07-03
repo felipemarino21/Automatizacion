@@ -10,7 +10,8 @@ To run this test, you must have Maven installed
 https://maven.apache.org/install.html
 
 
-Use Maven
+Using Maven
+
 Open a command window and run:
 
 maven clean test 
