@@ -12,7 +12,7 @@ https://maven.apache.org/install.html
 
 Using Maven
 
-Open a command window and run:
+Open a command window in the project root folder and run:
 
 maven clean test 
 
